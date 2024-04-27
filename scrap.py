@@ -16,3 +16,5 @@ for query in queries:
 				f.write(tweet.json)
 				f.write("\n")
 				f.flush()
+				if max and i > max:
+					break
