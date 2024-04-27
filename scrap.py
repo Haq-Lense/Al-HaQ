@@ -1,9 +1,9 @@
-from snscrape.module import twitter
+from snscrape.modules import twitter
 import json
 queries=['residential proxies']
 max = 1000
 def scrap_id(query):
-	scrap = twitter.twitterIdScraper(query)
+	scrap = twitter.twitterResearchScraper(query)
 	return scrap
 for query in queries:
 	output_filename = query.replace("","_"+".txt")
