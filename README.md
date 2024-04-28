@@ -11,7 +11,7 @@ _Leveraging the power of quantum computing to create trustworthy and effective t
 
 ### NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
-https://sites.nyuad.nyu.edu/hackathon/
+[https://sites.nyuad.nyu.edu/hackathon/](https://sites.nyuad.nyu.edu/hackathon/)
 
 ## Presentation
 
@@ -56,4 +56,4 @@ Furthermore, the application of QML in fake news detection is compelling because
 **Mentors:**
 [Akash](https://github.com/akashkthkr), [Favour](https://github.com/favour-nerrise)
 
-And thank you to the oragnising committee of NYUAD 2024 Hackathon https://sites.nyuad.nyu.edu/hackathon/ and Qbraid and other student who made it possible and great.
+And thank you to the oragnising committee of [NYUAD 2024 Hackathon](https://sites.nyuad.nyu.edu/hackathon/) and Qbraid and other student who made it possible and great.
