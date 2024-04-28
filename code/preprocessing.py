@@ -1,6 +1,6 @@
 import sys
 
-sys.path.insert(1, "/home/favour_nerrise/Al-HaQ")
+sys.path.insert(1, "./Al-HaQ")
 import pandas as pd
 import torch
 from torch.nn.utils.rnn import pad_sequence
