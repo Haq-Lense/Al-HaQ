@@ -12,7 +12,7 @@ _Leveraging the power of quantum computing to create trustworthy and effective t
 
 <!--[![](https://img.shields.io/pypi/dm/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/)-->
 
-[Al-HaQ Website Link](https://github.com/Haq-Lense/Al-HaQ)
+Check out the latest updates on our [**GitHub Repository**](https://github.com/Haq-Lense/Al-HaQ).
 
 ### NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
