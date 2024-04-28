@@ -24,7 +24,7 @@ Fake news can spread up to 10 times faster than true reporting on social media. 
 **Quantum algorithm**:
 
 - Quantum Optimization for QUBO problems
-- Quantum Machine Learning
+-  Machine Learning
 
 **Installation Instructions:**
 **_Requirements:_**
@@ -36,9 +36,9 @@ pip3 install -r requirements.txt
 
 - Feed information from the extension
 
-### Using Qunatum Optimization for QUBO problems
+### Using Quantum Optimization for QUBO problems
 
-Quantum computing can be ingeniously leveraged to balance between the truthfulness of content and user preferences in social media feeds by modeling the selection process as a Quantum Unbounded Binary Optimization (QUBO) problem. The QUBO framework is well-suited for optimizing binary decision variables under certain constraints and objectives, making it ideal for handling complex, multifaceted decisions like curating personalized news feeds. In this scenario, each piece of content can be represented as a variable whose state (selected or not selected for display) depends on both its veracity and its alignment with user preferences. The objective function in the QUBO model can be designed to maximize the truthfulness of the content while also considering user engagement metrics, such as past interaction history and expressed interests.
+ computing can be ingeniously leveraged to balance between the truthfulness of content and user preferences in social media feeds by modeling the selection process as a Quantum Unbounded Binary Optimization (QUBO) problem. The QUBO framework is well-suited for optimizing binary decision variables under certain constraints and objectives, making it ideal for handling complex, multifaceted decisions like curating personalized news feeds. In this scenario, each piece of content can be represented as a variable whose state (selected or not selected for display) depends on both its veracity and its alignment with user preferences. The objective function in the QUBO model can be designed to maximize the truthfulness of the content while also considering user engagement metrics, such as past interaction history and expressed interests.
 
 Implementing this with quantum computing involves constructing a quantum system where each potential news item's relevance and truthfulness are encoded into quantum bits (qubits). The interactions between these qubits—reflecting the intricate balance of providing truth while catering to user tastes—are then meticulously optimized using quantum algorithms. This approach exploits the quantum parallelism that allows the examination of multiple potential combinations of news items simultaneously, rapidly converging on an optimal mix that upholds informational integrity and user satisfaction. As quantum processors mature, this method could substantially enhance the capability of social platforms to deliver highly personalized yet accurate and reliable content, thus fostering a more informed and engaged user base while combating misinformation effectively.
 
