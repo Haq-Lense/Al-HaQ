@@ -15,7 +15,7 @@ _Leveraging the power of quantum computing to create trustworthy and effective t
 
 ## Presentation
 
-_The slides can be viewed [here](https://www.canva.com/design/DAFheTueBTE/iKTIXVJDEhtiVuoBL80QyA/view)._
+_The slides can be viewed [here](https://www.canva.com/design/DAGDmjJBkM8/WADayAoPQzvoAcPfsHyGAQ/edit?utm_content=DAGDmjJBkM8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)._
 
 ## Motivation
 
