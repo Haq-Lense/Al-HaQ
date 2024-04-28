@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from math import product, log10
 
 class Profile:
     """
@@ -10,7 +11,7 @@ class Profile:
         name (str): The name of the user.
         follower_of (str): The user that this profile follows.
         tweets_count (int): The number of tweets made by the user.
-        score (float): The score of the user profile from 0 to 100 (default is -1.0).
+        score (float): The score of the user profile from 0 to 100 (default is 0.0).
         posts (list): A list of posts made by the user (default is empty).
     """
 
@@ -28,9 +29,9 @@ class Profile:
         self.name = name
         self.follower_of = follower_of
         self.tweets_count = tweets_count
-        self.score = -1.0  # -1 is an invalid score and means that the score has not been calculated yet
+        self.score = 0.0
         self.posts = []
-        self.posts_true_or_not = []
+        self.posts_score = []
 
     @staticmethod
     def create_profiles_from_database(database):
@@ -57,7 +58,7 @@ class Profile:
         # Determine if the posts are true or not by running the model
         for profile in profiles:
             for post in profile.posts:
-                profile.posts_true_or_not.append(true_or_not(post))
+                profile.posts_score.append(tweet_score(post))
             profile.score = calculate_score(profile)
 
         return
@@ -95,17 +96,58 @@ def get_user_score(user_id):
             return profile.score
     return -1.0
 
-def true_or_not(post):
-    # TODO: Implement function that uses model to determine if a post is true or not
+def tweet_score(profile, post):
+    """
+    Calculates the score of a tweet based on the given profile and post.
+
+    Args:
+        profile (str): The profile of the user who posted the tweet.
+        post (str): The content of the tweet.
+
+    Returns:
+        float: The score of the tweet.
+    """
+    alpha = 0.75
+    score = alpha * ML(post) + (1 - alpha) * profile.score
+    return score
+
+def ML(post):
+    
     return
 
 def calculate_score(profile):
-    # TODO: Implement function that calculates the score of a profile
-    return
+    """
+    Calculate the score for a given profile based on the number of posts and their scores.
+
+    Args:
+        profile (Profile): The profile object containing the posts and their scores.
+
+    Returns:
+        float: The calculated score for the profile.
+    """
+    total_posts_count = len(profile.posts_score)
+    if total_posts_count > 0:
+        partial = 1
+        for i in range(profile.posts_score):
+            partial = partial * profile.posts_score(i) ** (1/i)
+        score = min(1, log10(log10(total_posts_count)) * partial)
+    else:
+        score = 0.0
+    return score
 
 def new_post(post_content, profile):
+    """
+    Add a new post to the profile.
+
+    Args:
+        post_content (str): The content of the post.
+        profile (Profile): The profile to add the post to.
+
+    Returns:
+        None
+    """
     profile.posts.append(post_content)
-    profile.posts_true_or_not.append(true_or_not(post_content))
+    profile.posts_score.append(tweet_score(post_content))
     profile.score = calculate_score(profile)
 
 @app.route('/getScore', methods=['GET'])
