@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AlHaQ",
+  "description": "Discover AlHaQ, the ultimate solution to combat misinformation on social media. With the rise of fake news spreading like wildfire, AlHaQ stands as your shield against the onslaught of misinformation. Fake news can spread up to 10 times faster than true reporting on social media. They often reach over 100,000 people within a few hours, and the implications can be devastating in spreading misinformation, even when corrected. But fear not, AL-HAQ is here to restore trust and accuracy to your social media experience.",
+  "version": "0.10",
+  "browser_action": {
+    "default_poppup": "index.html",
+    "default_icons": {
+      "16": "images/alhack.png",
+      "24": "images/alhack.png",
+      "32": "images/alhack.png",
+      "48": "images/alhack.png",
+      "128": "images/alhack.png"
+    }
+  },
+  "icons": {
+    "128": "images/alhack.png"
+  },
+  "version": "0.10",
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["script.js"]
+    }
+  ]
+}
