@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Al-HaQ',
-    version='0.1.0',
+    version='0.1.1',
     description='A fight for truth. A better democracy.  ',
     long_description='Fake news can spread up to 10 times faster than true reporting on social media. These often reach 100,000+ people within a few hours, and the implications can be devastating in spreading misinformation, even when corrected. AlHaq is a cross-platform service that tailors any user’s social media feed to amplify trusted information within their social network using quantum computing. AlHaq can detect fake news from a social media user, rank the trustedness of members in their social network, and adapt their social media feed to boost true news sources and filter disinformation.',
     author='[Ahmad], [Emanuel], [Ghada], [Mariam], [Omar], [Pablo], [Salma], [Savar], [Favour], [Akash]',
