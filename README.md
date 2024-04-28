@@ -25,7 +25,29 @@ Fake news can spread up to 10 times faster than true reporting on social media. 
 **Quantum algorithm**:
 
 - Quantum Optimization for QUBO problems
--  Machine Learning
+- Quantum Machine Learning Algorithm
+
+***Formulation of the problem as a QUBO***:
+- We are going to model the social media feed problem as a graph. Consider s the root user, who consults his feed. The closest users in the app will be those that he/she follows (depth 1). The next closest users will be those followed by the ones he/she follows (depth 2). We can model this as a binary tree:
+
+![alt text](./img/BinayTreeofNodeofUsers.png)
+
+- With the Haq system we are able to compute a trustedness score for each user (I elaborate on that later). This allows us to assign a weight to each user, turning the binary tree into a weighted binary tree/graph. Now we consider that at every step we take from a node, each edge will carry a weight p, for step p. So the first step from the root node has weight 1, the second step has weight 2... etc. 
+- Now we would like to make a path that passes through each node only once, which represents the optimal order in which the feed will be displayed. This will obviously depend on the Haq score of the users, prioritising that the higher Haq and closer users come up first.
+
+***Problem***:
+- Find the path that starts at the user, and that crosses every node (only once), in a way such that it minimizes the sum of weight x step number.
+Mathematically, considering that the network is a graph G = (E, V ), and that the total number of edges is N
+
+
+- Where p is the step number (from the root node), hv is the Haq score of the user corresponding to node v, and xv,p is a binary variable which is 1 if node v is in position p in the path from xs,0.
+
+- Then Team modified the QUBO Hamiltonian for our use case:
+
+![alt text](./img/qubo_implemetation.png)
+
+But we did limit the equation to a few terms to actually work out in the Timeframe of the NYUAD Hackathon.
+
 
 **Installation Instructions:**
 **_Requirements:_**
