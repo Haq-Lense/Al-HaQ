@@ -1,10 +1,15 @@
 <a href="url"><img src="https://github.com/Haq-Lense/Al-HaQ/blob/main/img/Al-HaQ%20logo%20white.png" allign="center" height="150" width="150" ></a>
 
+[![Al-HaQ Logo](https://github.com/Haq-Lense/Al-HaQ/img/Al_HaQ_logo_white.png)](https://github.com/Haq-Lense/Al-HaQ)
+
+
 # Al-HaQ | الحق | (The Truth)
 
 _Leveraging the power of quantum computing to create trustworthy and effective tools for battling the spread of fake news on social media._
 
-[![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://github.com/Haq-Lense/Al-HaQ/blob/main/LICENSE) [![](https://img.shields.io/github/release/qcswat/qatrah.svg?style=popout-square)](https://github.com/Haq-Lense/Al-HaQ)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Release](https://img.shields.io/github/release/Haq-Lense/Al-HaQ.svg?style=popout-square)](https://github.com/Haq-Lense/Al-HaQ/releases)
+
 <!--[![](https://img.shields.io/pypi/dm/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/)-->
 
 [Al-HaQ Website Link](https://github.com/Haq-Lense/Al-HaQ)
