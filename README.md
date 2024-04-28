@@ -12,6 +12,8 @@ _Leveraging the power of quantum computing to create trustworthy and effective t
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Release](https://img.shields.io/github/release/Haq-Lense/Al-HaQ.svg?style=popout-square)](https://github.com/Haq-Lense/Al-HaQ/releases)
+[![PyPI version](https://badge.fury.io/py/package-name.svg)](https://pypi.org/project/Al-HaQ/)
+
 
 <!--[![](https://img.shields.io/pypi/dm/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/)-->
 
