@@ -17,6 +17,7 @@ _Leveraging the power of quantum computing to create trustworthy and effective t
 
 _The slides can be viewed [here](https://www.canva.com/design/DAGDmjJBkM8/WADayAoPQzvoAcPfsHyGAQ/view)._
 
+
 ## Motivation
 
 Fake news can spread up to 10 times faster than true reporting on social media. These often reach 100,000+ people within a few hours, and the implications can be devastating in spreading misinformation, even when corrected. AlHaq is a cross-platform service that tailors any user’s social media feed to amplify trusted information within their social network using quantum computing. AlHaq can detect fake news from a social media user, rank the trustedness of members in their social network, and adapt their social media feed to boost true news sources and filter disinformation.
