@@ -1,6 +1,9 @@
-<a href="url"><img src="https://github.com/Haq-Lense/Al-HaQ/blob/main/img/Al-HaQ%20logo%20white.png" allign="center" height="150" width="150" ></a>
+<!-- <a href="url"><img src="https://github.com/Haq-Lense/Al-HaQ/blob/main/img/Al-HaQ%20logo%20white.png" allign="center" height="150" width="150" ></a>
 
-[![Al-HaQ Logo](https://github.com/Haq-Lense/Al-HaQ/img/Al_HaQ_logo_white.png)](https://github.com/Haq-Lense/Al-HaQ)
+[![Al-HaQ Logo](https://github.com/Haq-Lense/Al-HaQ/img/Al_HaQ_logo_white.png)](https://github.com/Haq-Lense/Al-HaQ) -->
+
+![alt text](./img/Al-HaQ_logo.png)
+
 
 
 # Al-HaQ | الحق | (The Truth)
