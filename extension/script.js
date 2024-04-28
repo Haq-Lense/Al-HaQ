@@ -5,9 +5,13 @@ function getHaqScore(userid) {
   if (userid == "fnerrise") {
     // Pre determined HaQ Score for a specific user
     return 97;
+  } else if (userid == "elonmusk") {
+    // Pre determined HaQ Score for a specific user
+    return 88;
   } else {
     // Mock HaQ Score for all other users, it would be replaced with Twitter's API
-    return Math.floor(Math.random() * 100);
+    return Math.floor(Math.random() * 56) + 40;
+    // return Math.floor(Math.random() * 100);
   }
 }
 
