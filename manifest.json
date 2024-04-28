@@ -1,22 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "Al-HaQ",
-  "description": "Fake news can spread up to 10 times faster than true reporting on social media. These often reach 100,000+ people within a few hours, and the implications can be devastating in spreading misinformation, even when corrected. AlHaq is a cross-platform service that tailors any user’s social media feed to amplify trusted information within their social network using quantum computing. AlHaq can detect fake news from a social media user, rank the trustedness of members in their social network, and adapt their social media feed to boost true news sources and filter disinformation.",
+  "name": "AlHaQ",
+  "description": "Discover AlHaQ, the ultimate solution to combat misinformation on social media. With the rise of fake news spreading like wildfire, AlHaQ stands as your shield against the onslaught of misinformation. Fake news can spread up to 10 times faster than true reporting on social media. They often reach over 100,000 people within a few hours, and the implications can be devastating in spreading misinformation, even when corrected. But fear not, AL-HAQ is here to restore trust and accuracy to your social media experience.",
   "version": "0.10",
-  //   "browser_action": {
-  //     "default_poppup": "index.html",
-  //     "default_icons": {
-  //       "16": "images/",
-  //       "24": "images/",
-  //       "32": "images/",
-  //       "48": "images/",
-  //       "128": "images/"
-  //     },
-  //     "icons": {
-  //       "48": "images/",
-  //       "128": "images/"
-  //     }
-  //   },
+  "browser_action": {
+    "default_poppup": "index.html",
+    "default_icons": {
+      "16": "images/alhack.png",
+      "24": "images/alhack.png",
+      "32": "images/alhack.png",
+      "48": "images/alhack.png",
+      "128": "images/alhack.png"
+    }
+  },
+  "icons": {
+    "128": "images/alhack.png"
+  },
+  "version": "0.10",
   "content_scripts": [
     {
       "matches": ["*://*.twitter.com/*"],

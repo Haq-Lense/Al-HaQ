@@ -1,10 +1,14 @@
-// Global set to keep track of processed tweet userids to avoid duplication
 const processedUserIds = new Set();
 
-// Function to perform an action with the userid
-function foo(userid) {
+function getHaqScore(userid) {
   console.log("New tweet detected! UserID:", userid);
-  return Math.floor(Math.random() * 100);
+  if (userid == "fnerrise") {
+    // Pre determined HaQ Score for a specific user
+    return 97;
+  } else {
+    // Mock HaQ Score for all other users, it would be replaced with Twitter's API
+    return Math.floor(Math.random() * 100);
+  }
 }
 
 function addScoreToDOM(tweet, score) {
@@ -22,22 +26,23 @@ function addScoreToDOM(tweet, score) {
   tweet.appendChild(spanScore);
 }
 
-// Function to check for new tweets and call foo() with userid
 function checkForNewTweets() {
   console.log("Checking for new tweets...");
   const spansWithAtSymbol = document.querySelectorAll("span");
 
   spansWithAtSymbol.forEach((tweetHandle) => {
     if (
-      !processedUserIds.has(tweetHandle) &&
-      tweetHandle.innerText.includes("@")
+      processedUserIds.has(tweetHandle) ||
+      !tweetHandle.innerText.includes("@")
     ) {
-      const score = foo(tweetHandle.innerText.slice(1));
+      return;
+    } else {
+      const score = getHaqScore(tweetHandle.innerText.slice(1));
       processedUserIds.add(tweetHandle, score);
       addScoreToDOM(tweetHandle, score);
     }
   });
 }
 
-// Set an interval to check for new tweets every second (adjust interval as needed)
+// Set an interval to check for new tweets every second
 setInterval(checkForNewTweets, 1000);
