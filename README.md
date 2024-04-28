@@ -2,7 +2,7 @@
 
 [![Al-HaQ Logo](https://github.com/Haq-Lense/Al-HaQ/img/Al_HaQ_logo_white.png)](https://github.com/Haq-Lense/Al-HaQ) -->
 
-![alt text](./img/Al-HaQ_logo.png)
+<img src="./img/Al-HaQ_logo.png" alt="alt text" width="100" height="75"/>
 
 
 
