@@ -21,7 +21,7 @@ os.environ["CURL_CA_BUNDLE"] = ""
 os.environ["REQUESTS_CA_BUNDLE"] = ""
 
 # Setting the batch size for training
-BATCH_SIZE = 56
+BATCH_SIZE = 24
 
 # Configuring proxy settings for network requests
 proxy = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
