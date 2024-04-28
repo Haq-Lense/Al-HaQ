@@ -79,6 +79,16 @@ Quantum Machine Learning (QML) offers a promising avenue for detecting fake news
 
 Furthermore, the application of QML in fake news detection is compelling because of its potential scalability and speed, which are critical in the fast-paced environment of social media. As quantum processors continue to evolve, they are expected to perform certain computations exponentially faster than their classical counterparts, allowing for real-time analysis and response to emerging fake news stories. Additionally, quantum-enhanced natural language processing techniques can improve the accuracy of semantic analysis, sentiment detection, and the contextual interpretation of posts, which are crucial for assessing the veracity of information. By integrating QML into existing digital platforms, it's possible to create a robust, automated system that not only flags potential fake news for human review but also learns from ongoing inputs to improve its predictive accuracy over time, thereby reinforcing the integrity of information shared online.
 
+*Result*
+
+- Graphs to show Haq Score vs Tweets
+![alt text](./img/haq_score.png)
+
+- Graphs of Edges to depth of the users:
+![alt text](./img/Edge_depth.png)
+
+
+
 ## Acknowledgements
 
 **Hackers:**
