@@ -6,24 +6,32 @@ class Profile:
     """
     Represents a user profile.
 
-    Attributes:
-        user_id (int): The unique identifier of the user.
-        name (str): The name of the user.
-        follower_of (str): The user that this profile follows.
-        tweets_count (int): The number of tweets made by the user.
-        score (float): The score of the user profile from 0 to 100 (default is 0.0).
-        posts (list): A list of posts made by the user (default is empty).
+    :ivar user_id: The unique identifier of the user.
+    :vartype user_id: int
+    :ivar name: The name of the user.
+    :vartype name: str
+    :ivar follower_of: The user that this profile follows.
+    :vartype follower_of: str
+    :ivar tweets_count: The number of tweets made by the user.
+    :vartype tweets_count: int
+    :ivar score: The score of the user profile from 0 to 100 (default is 0.0).
+    :vartype score: float
+    :ivar posts: A list of posts made by the user (default is empty).
+    :vartype posts: list
     """
 
     def __init__(self, user_id, name, follower_of, tweets_count):
         """
         Initializes a new instance of the Profile class.
 
-        Args:
-            user_id (int): The unique identifier of the user.
-            name (str): The name of the user.
-            follower_of (str): The user that this profile follows.
-            tweets_count (int): The number of tweets made by the user.
+        :param user_id: The unique identifier of the user.
+        :type user_id: int
+        :param name: The name of the user.
+        :type name: str
+        :param follower_of: The user that this profile follows.
+        :type follower_of: str
+        :param tweets_count: The number of tweets made by the user.
+        :type tweets_count: int
         """
         self.user_id = user_id
         self.name = name
@@ -38,11 +46,10 @@ class Profile:
         """
         Creates and populates profiles from a database.
 
-        Args:
-            database (list): A list of dictionaries representing profile data from the database.
-
-        Returns:
-            None
+        :param database: A list of dictionaries representing profile data from the database.
+        :type database: list
+        :returns: None
+        :rtype: None
         """
         # Iterate over the database data and create profile objects
         for data in database:
@@ -70,11 +77,11 @@ def user_exists(user_id):
     """
     Check if a user with the given user_id exists in the profiles list.
 
-    Args:
-        user_id (int): The ID of the user to check.
+    :param user_id: The ID of the user to check.
+    :type user_id: int
 
-    Returns:
-        Union[Profile, bool]: The profile object if a user with the given user_id exists, False otherwise.
+    :return: The profile object if a user with the given user_id exists, False otherwise.
+    :rtype: Union[Profile, bool]
     """
     for profile in profiles:
         if profile.user_id == user_id:
@@ -85,11 +92,11 @@ def get_user_score(user_id):
     """
     Get the score for a given user ID.
 
-    Parameters:
-    user_id (int): The ID of the user.
+    :param user_id: The ID of the user.
+    :type user_id: int
 
-    Returns:
-    int: The score of the user. Returns -1.0 if the user ID is not found.
+    :return: The score of the user. Returns -1.0 if the user ID is not found.
+    :rtype: float
     """
     for profile in profiles:
         if profile.user_id == user_id:
@@ -100,30 +107,31 @@ def tweet_score(profile, post):
     """
     Calculates the score of a tweet based on the given profile and post.
 
-    Args:
-        profile (str): The profile of the user who posted the tweet.
-        post (str): The content of the tweet.
+    :param profile: The profile of the user who posted the tweet.
+    :type profile: str
+    :param post: The content of the tweet.
+    :type post: str
 
-    Returns:
-        float: The score of the tweet.
+    :return: The score of the tweet.
+    :rtype: float
     """
     alpha = 0.75
     score = alpha * ML(post) + (1 - alpha) * profile.score
     return score
 
 def ML(post):
-    
+    #TODO: Function that uses the QML model to calculate the score of a post
     return
 
 def calculate_score(profile):
     """
     Calculate the score for a given profile based on the number of posts and their scores.
 
-    Args:
-        profile (Profile): The profile object containing the posts and their scores.
+    :param profile: The profile object containing the posts and their scores.
+    :type profile: Profile
 
-    Returns:
-        float: The calculated score for the profile.
+    :return: The calculated score for the profile.
+    :rtype: float
     """
     total_posts_count = len(profile.posts_score)
     if total_posts_count > 0:
@@ -139,12 +147,13 @@ def new_post(post_content, profile):
     """
     Add a new post to the profile.
 
-    Args:
-        post_content (str): The content of the post.
-        profile (Profile): The profile to add the post to.
+    :param post_content: The content of the post.
+    :type post_content: str
+    :param profile: The profile to add the post to.
+    :type profile: Profile
 
-    Returns:
-        None
+    :return: None
+    :rtype: None
     """
     profile.posts.append(post_content)
     profile.posts_score.append(tweet_score(post_content))
@@ -155,8 +164,8 @@ def get_score():
     """
     Retrieves the score for a user based on the provided data.
 
-    Returns:
-        int: The score of the user (Adds given profile and returns -1.0 if user does not exist).
+    :return: The score of the user (Adds given profile and returns -1.0 if user does not exist).
+    :rtype: int
     """
     data = request.get_json()
     user_id = data.get('user_id')
@@ -178,8 +187,8 @@ def add_post():
     """
     Adds a post under a certain profile.
 
-    Returns:
-        str: A success message if the post is added successfully.
+    :return: A success message if the post is added successfully.
+    :rtype: str
     """
     data = request.get_json()
     user_id = data.get('user_id')
