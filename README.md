@@ -1,4 +1,4 @@
-<a href="url"><img src="https://github.com/Haq-Lense/Al-HaQ/blob/main/img/Al-HaQ%20logo%20white.png" align="middle" height="150" width="150" ></a>
+<a href="url"><img src="https://github.com/Haq-Lense/Al-HaQ/blob/main/img/Al-HaQ%20logo%20white.png" allign="center" height="150" width="150" ></a>
 
 # Al-HaQ | الحق | (The Truth)
 
