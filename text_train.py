@@ -1,14 +1,14 @@
 import sys
 import torch
 
-sys.path.insert(1, "/home/favour_nerrise/Al-HaQ")
+# sys.path.insert(1, "/home/favour_nerrise/Al-HaQ")
 from src.preprocessing import FakeTweetsDataset, create_mini_batch
 from torch.utils.data import DataLoader
 from torch import nn
 
 import models.qnn as qnn
 
-from transformers import AutoTokenizer XLNetForSequenceClassification
+from transformers import AutoTokenizer, XLNetForSequenceClassification
 from IPython.display import display, clear_output
 from sklearn.metrics import accuracy_score
 from tqdm import tqdm
@@ -24,19 +24,16 @@ MODEL_NAME = "xlnet-base-cased"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
-cla_model = XLNetForSequenceClassification.from_pretrained(
-    MODEL_NAME, num_labels=2
-)
+cla_model = XLNetForSequenceClassification.from_pretrained(MODEL_NAME, num_labels=2)
 
-qcnn = qnn.QCNN(4)
+qcnn = qnn.QCNN(20)
 
-data_path = "../datasets/twitter_dataset.csv"
+data_path = "datasets/twitter_dataset"
 trainset = FakeTweetsDataset("train", tokenizer=tokenizer, path=data_path)
 trainloader = DataLoader(trainset, batch_size=BATCH_SIZE, collate_fn=create_mini_batch)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-print("device:", device)
 cla_model.to(device)
 qcnn.to(device)
 
@@ -51,25 +48,27 @@ optimizer = torch.optim.AdamW(
 loss_func = nn.CrossEntropyLoss()
 
 NUM_EPOCHS = 50
-print(f"data length:{trainset.len}")
 
 for epoch in range(NUM_EPOCHS):
     train_loss = 0.0
     train_acc = 0.0
 
-    loop = tqdm(trainloader)
-    for batch_idx, data in enumerate(loop):
+    print(f"Epoch [{epoch + 1}/{NUM_EPOCHS}]")
+
+    for batch_idx, data in enumerate(trainloader):
 
         tokens_tensors, segments_tensors, masks_tensors, labels = [
             t.to(device) for t in data
         ]
+
+        # labels = labels.type(torch.LongTensor).to(device)
 
         optimizer.zero_grad()
         q_input = cla_model(
             input_ids=tokens_tensors,
             token_type_ids=segments_tensors,
             attention_mask=masks_tensors,
-        )[0]
+        )[0].to(device)
 
         outputs = qcnn(q_input)
 
@@ -83,8 +82,7 @@ for epoch in range(NUM_EPOCHS):
 
         train_loss += loss.item()
 
-        loop.set_description(f"Epoch [{epoch + 1}/{NUM_EPOCHS}]")
-        loop.set_postfix(acc=train_acc, loss=train_loss / (batch_idx + 1))
+    print(f"acc={train_acc}, loss={train_loss / (batch_idx + 1):.2f}")
 
     torch.save(cla_model, "results/xlnet_twitter.pth")
     torch.save(qcnn.state_dict(), "results/qcnn_twitter_tx.pth")
