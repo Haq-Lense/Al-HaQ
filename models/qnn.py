@@ -4,10 +4,25 @@ import torch.nn as nn
 
 
 def state_prepare(input, qbits):
+    """
+    Prepares the initial state of the qubits using angle embedding.
+
+    Args:
+        input (Tensor): Input tensor containing the angles for the qubits.
+        qbits (int): Number of qubits to prepare.
+    """
     qml.AngleEmbedding(input, wires=range(qbits))
 
 
 def conv(b1, b2, params):
+    """
+    Applies a convolution operation to the specified qubits using given parameters.
+
+    Args:
+        b1 (int): The first qubit index.
+        b2 (int): The second qubit index.
+        params (Tensor): A tensor containing three parameters for the RZ and RY gates.
+    """
     qml.RZ(-torch.pi / 2, wires=b2)
     qml.CNOT([b2, b1])
     qml.RZ(params[0], wires=b1)
@@ -19,6 +34,14 @@ def conv(b1, b2, params):
 
 
 def pool(b1, b2, params):
+    """
+    Applies a pooling operation to the specified qubits using given parameters.
+
+    Args:
+        b1 (int): The first qubit index.
+        b2 (int): The second qubit index.
+        params (Tensor): A tensor containing three parameters for the RZ and RY gates.
+    """
     qml.RZ(-torch.pi / 2, wires=b2)
     qml.CNOT([b2, b1])
     qml.RZ(params[0], wires=b1)
@@ -72,6 +95,16 @@ def draw(input, params, cir, name):
 
 
 class QCNN(nn.Module):
+    """
+    Defines a Quantum Convolutional Neural Network (QCNN) model for a specified number of qubits.
+
+    Args:
+        qbits (int): Number of qubits in the quantum circuit.
+
+    Attributes:
+        qcnn_layer (TorchLayer): The PyTorch layer representing the QCNN.
+    """
+
     def __init__(self, qbits):
         super().__init__()
         self.qbits = qbits
@@ -84,6 +117,15 @@ class QCNN(nn.Module):
             self.qcnn_layer = qml.qnn.TorchLayer(qcnn8, weight_shapes={"weights": 84})
 
     def forward(self, x):
+        """
+        Defines the forward pass for the QCNN.
+
+        Args:
+            x (Tensor): Input tensor.
+
+        Returns:
+            Tensor: The output of the QCNN layer.
+        """
 
         max = torch.max(x)
         min = torch.min(x)
