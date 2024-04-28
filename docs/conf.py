@@ -6,23 +6,24 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Al-HaQ'
-copyright = '2024, Ahmad, Akash, Emanuel, Favour, Ghada, Mariam, Omar, Pablo, Salma, Savar'
-author = 'Ahmad, Akash, Emanuel, Favour, Ghada, Mariam, Omar, Pablo, Salma, Savar'
-release = '0.1'
+project = "Al-HaQ"
+copyright = (
+    "2024, Ahmad, Akash, Emanuel, Favour, Ghada, Mariam, Omar, Pablo, Salma, Savar"
+)
+author = "Ahmad, Akash, Emanuel, Favour, Ghada, Mariam, Omar, Pablo, Salma, Savar"
+release = "0.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
+html_static_path = ["_static"]

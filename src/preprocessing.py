@@ -1,10 +1,10 @@
 import sys
 
 sys.path.insert(1, "/home/favour_nerrise/Al-HaQ")
-from torch.utils.data import Dataset
-import torch
 import pandas as pd
+import torch
 from torch.nn.utils.rnn import pad_sequence
+from torch.utils.data import Dataset
 
 
 class FakeTweetsDataset(Dataset):
