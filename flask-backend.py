@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from math import product, log10
+from math import log10
 
 class Profile:
     """
